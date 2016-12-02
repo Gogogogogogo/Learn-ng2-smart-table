@@ -10,7 +10,6 @@ import { CellComponent } from './components/cell/cell.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PagerComponent } from './components/pager/pager.component';
 import { TitleComponent } from './components/title/title.component';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -21,7 +20,8 @@ import { TitleComponent } from './components/title/title.component';
         FilterComponent,
         PagerComponent,
         TitleComponent,
-        Ng2SmartTableComponent
+        Ng2SmartTableComponent,
+
     ],
     exports: [
         Ng2SmartTableComponent

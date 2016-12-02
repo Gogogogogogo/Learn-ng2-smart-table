@@ -33,7 +33,7 @@ var Ng2SmartTableModule = (function () {
                 filter_component_1.FilterComponent,
                 pager_component_1.PagerComponent,
                 title_component_1.TitleComponent,
-                ng2_smart_table_component_1.Ng2SmartTableComponent
+                ng2_smart_table_component_1.Ng2SmartTableComponent,
             ],
             exports: [
                 ng2_smart_table_component_1.Ng2SmartTableComponent

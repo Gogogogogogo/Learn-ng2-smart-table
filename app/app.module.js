@@ -17,6 +17,8 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var ng2_smart_table_module_1 = require("./ng2-smart-Table/ng2-smart-table.module");
 var app_component_1 = require("./app.component");
+var ky_button_module_1 = require("./ky-button/ky-button.module");
+var third_component_1 = require('./third.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,9 +29,11 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 forms_1.ReactiveFormsModule,
                 ng2_smart_table_module_1.Ng2SmartTableModule,
+                ky_button_module_1.KyButtonModule
             ],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            declarations: [app_component_1.AppComponent, third_component_1.ThirdComponent],
+            bootstrap: [app_component_1.AppComponent],
+            entryComponents: [third_component_1.ThirdComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

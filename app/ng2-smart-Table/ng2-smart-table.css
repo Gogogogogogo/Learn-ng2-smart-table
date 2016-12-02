@@ -12,16 +12,16 @@
   word-break: normal;
   word-break: keep-all;
 
-  td, th {
-    font-size: .875rem;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid #e9ebec;
-  }
-
-  .ng2-smart-row {
-    &.selected {
-      background: rgba(0, 0, 0, 0.05);
-    }
-  }
 }
+.ng2-smart-table.ng2-smart-row td, .ng2-smart-table.ng2-smart-row th {
+  font-size: .875rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e9ebec;
+}
+.ng2-smart-table .ng2-smart-row .selected {
+
+   background: rgba(0, 0, 0, 0.05);
+}
+tr{border:solid #add9c0; border-width:1px;}
+table{border:solid #add9c0; border-width:1px;}

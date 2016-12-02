@@ -1,4 +1,4 @@
-<div class="ng2-smart-table-container">
+<div class="ng2-smart-table-container"  >
     <table class="ng2-smart-table table" [id]="grid.getSetting('attr.id')" [ngClass]="grid.getSetting('attr.class')">
         <thead *ngIf="!grid.getSetting('hideHeader') || !grid.getSetting('hideSubHeader')">
 
@@ -34,9 +34,8 @@
 
         </thead>
 
-        <tbody>
-
-        <tr *ngFor="let row of grid.getRows()" (click)="onUserSelectRow(row)" class="ng2-smart-row" [ngClass]="{selected: row.isSelected}">
+        <tbody >
+        <tr #ref *ngFor="let row of grid.getRows();let i=index"  (click)="onUserSelectRow(row)" class="ng2-smart-row" [ngClass]="{selected: row.isSelected}">
             <td *ngIf="!row.isInEditing && grid.showActionColumn()" class="ng2-smart-actions">
                 <a href="#" *ngIf="grid.getSetting('actions.edit')" class="ng2-smart-action ng2-smart-action-edit-edit" [innerHTML]="grid.getSetting('edit.editButtonContent')" (click)="onEdit(row, $event)"></a>
                 <a href="#" *ngIf="grid.getSetting('actions.delete')" class="ng2-smart-action ng2-smart-action-delete-delete" [innerHTML]="grid.getSetting('delete.deleteButtonContent')" (click)="onDelete(row, $event)"></a>
@@ -46,7 +45,7 @@
                 <a href="#" class="ng2-smart-action ng2-smart-action-edit-cancel" [innerHTML]="grid.getSetting('edit.cancelButtonContent')" (click)="row.isInEditing = false;"></a>
             </td>
             <td *ngFor="let cell of row.getCells()">
-                <ng2-smart-table-cell [cell]="cell" [mode]="grid.getSetting('mode')" [inputClass]="grid.getSetting('edit.inputClass')" (edited)="onSave(row, $event)"></ng2-smart-table-cell>
+                <ng2-smart-table-cell [cell]="cell" [ref]="trRef" [trIndex]="i" [mode]="grid.getSetting('mode')" [inputClass]="grid.getSetting('edit.inputClass')" (edited)="onSave(row, $event)"></ng2-smart-table-cell>
             </td>
 
         </tr>
@@ -59,5 +58,5 @@
     </table>
 
 
-    <ng2-smart-table-pager *ngIf="grid.getSetting('pager.display')" [source]="source" [perPage]="grid.getSetting('pager.perPage')"></ng2-smart-table-pager>
+    <ng2-smart-table-pager  *ngIf="grid.getSetting('pager.display')" [source]="source" [perPage]="grid.getSetting('pager.perPage')"></ng2-smart-table-pager>
 </div>

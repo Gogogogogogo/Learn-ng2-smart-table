@@ -13,19 +13,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var local_dataSource_1 = require('./ng2-smart-Table/data-source/local/local-dataSource');
+var third_component_1 = require('./third.component');
 var AppComponent = (function () {
     function AppComponent() {
+        this.thirdComponent = third_component_1.ThirdComponent;
         this.settings = {
-            delete: {
-                confirmDelete: true
-            },
-            add: {
-                confirmCreate: true
-            },
-            edit: {
-                confirmSave: true
-            },
+            /*        delete: {
+                        confirmDelete: true
+                    },
+                    add: {
+                        confirmCreate: true
+                    },
+                    edit: {
+                        confirmSave: true
+                    },*/
             columns: {
+                innerDetail: {
+                    title: 'innerDetail',
+                    type: 'component',
+                    component: this.thirdComponent,
+                    paras: 'create'
+                },
                 id: {
                     title: 'ID'
                 },
@@ -37,6 +45,12 @@ var AppComponent = (function () {
                 },
                 email: {
                     title: 'Email'
+                },
+                template: {
+                    title: 'Component',
+                    type: 'component',
+                    component: this.thirdComponent,
+                    paras: 'common'
                 }
             }
         };
@@ -150,7 +164,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n      <ng2-smart-table \n    [settings]=\"settings\" \n    [source]=\"source\" \n    (deleteConfirm)=\"onDeleteConfirm($event)\"\n    (editConfirm)=\"onSaveConfirm($event)\"\n    (createConfirm)=\"onCreateConfirm($event)\"></ng2-smart-table>\n  "
+            template: "\n      <ng2-smart-table \n    [settings]=\"settings\" \n    [source]=\"source\" \n    (deleteConfirm)=\"onDeleteConfirm($event)\"\n    (editConfirm)=\"onSaveConfirm($event)\"\n    (createConfirm)=\"onCreateConfirm($event)\"></ng2-smart-table>",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

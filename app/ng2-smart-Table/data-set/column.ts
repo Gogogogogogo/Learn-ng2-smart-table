@@ -7,6 +7,10 @@ export class Column{
     public type:string ='';
     public class:string='';
 
+    public component:any;
+    public paras:string;
+
+
     public isSortable:boolean=false;
     public isEditable:boolean=true;
     public isFilterable: boolean = false;
@@ -38,6 +42,12 @@ export class Column{
         this.title = this.settings['title'];
         this.class = this.settings['class'];
         this.type = this.prepareType();
+        if(this.settings['component']){
+            this.component=this.settings['component'];
+        }
+        if(this.settings['paras']){
+            this.paras=this.settings['paras'];
+        }
 
         this.isFilterable = typeof this.settings['filter'] === 'undefined' ? true : !!this.settings['filter'];
         this.defaultSortDirection = ['asc', 'desc'].indexOf(this.settings['sortDirection']) !== -1 ? this.settings['sortDirection'] : '';

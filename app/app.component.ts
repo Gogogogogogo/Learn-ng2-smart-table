@@ -3,6 +3,7 @@
  */
 import { Component } from '@angular/core';
 import {LocalDataSource} from './ng2-smart-Table/data-source/local/local-dataSource'
+import {ThirdComponent} from './third.component'
 @Component({
     selector: 'my-app',
     template: `
@@ -11,13 +12,12 @@ import {LocalDataSource} from './ng2-smart-Table/data-source/local/local-dataSou
     [source]="source" 
     (deleteConfirm)="onDeleteConfirm($event)"
     (editConfirm)="onSaveConfirm($event)"
-    (createConfirm)="onCreateConfirm($event)"></ng2-smart-table>
-  `
-
+    (createConfirm)="onCreateConfirm($event)"></ng2-smart-table>`,
 })
 export class AppComponent {
+    thirdComponent:any=ThirdComponent;
     settings = {
-        delete: {
+/*        delete: {
             confirmDelete: true
         },
         add: {
@@ -25,8 +25,14 @@ export class AppComponent {
         },
         edit: {
             confirmSave: true
-        },
+        },*/
         columns: {
+            innerDetail:{
+                title:'innerDetail',
+                type:'component',
+                component:this.thirdComponent,
+                paras:'create'
+            },
             id: {
                 title: 'ID'
             },
@@ -38,7 +44,14 @@ export class AppComponent {
             },
             email: {
                 title: 'Email'
+            },
+            template:{
+                title:'Component',
+                type:'component',
+                component:this.thirdComponent,
+                paras:'common'
             }
+
         }
     };
     data = [

@@ -30,6 +30,12 @@ var Column = (function () {
         this.title = this.settings['title'];
         this.class = this.settings['class'];
         this.type = this.prepareType();
+        if (this.settings['component']) {
+            this.component = this.settings['component'];
+        }
+        if (this.settings['paras']) {
+            this.paras = this.settings['paras'];
+        }
         this.isFilterable = typeof this.settings['filter'] === 'undefined' ? true : !!this.settings['filter'];
         this.defaultSortDirection = ['asc', 'desc'].indexOf(this.settings['sortDirection']) !== -1 ? this.settings['sortDirection'] : '';
         this.isSortable = typeof this.settings['sort'] === 'undefined' ? true : !!this.settings['sort'];

@@ -1,0 +1,162 @@
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+.font {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+}
+.vertical-align-center {
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+}
+.ky-create-button {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 30px;
+  min-width: 90px;
+  color: #ffffff;
+  background-color: #5cb85c;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: flex-end;
+  padding: 0 12px;
+}
+.ky-create-button:hover {
+  background-color: #53ad53;
+}
+.ky-create-button:active {
+  background-color: #449644;
+  border: 0;
+}
+.ky-common-button {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 30px;
+  min-width: 100px;
+  color: #ffffff;
+  background-color: #1898eb;
+  padding: 0 20px;
+}
+.ky-common-button:hover {
+  background-color: #178fdd;
+}
+.ky-common-button:active {
+  background-color: #127dc2;
+  border: 0;
+}
+.ky-common-button:disabled {
+  background-color: #e6e6e6;
+  color: #bbbbbb;
+}
+.ky-cancel-button {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 30px;
+  min-width: 100px;
+  color: #1898eb;
+  background-color: #ffffff;
+  padding: 0 20px;
+}
+.ky-cancel-button:hover {
+  background-color: #eeeeee;
+}
+.ky-cancel-button:active {
+  background-color: #dddddd;
+  border: 0;
+}
+.ky-warning-button {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 30px;
+  min-width: 100px;
+  color: #ffffff;
+  background-color: #f66661;
+  padding: 0 20px;
+}
+.ky-warning-button:hover {
+  background-color: #e95a55;
+}
+.ky-warning-button:active {
+  background-color: #d2514d;
+  border: 0;
+}
+.ky-table-footer-button {
+  font-family: "Microsoft YaHei", Arial;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333333;
+  border: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 24px;
+  min-width: 80px;
+  color: #1898eb;
+  background-color: #ffffff;
+  padding: 0 16px;
+  border: 1px solid #dddddd;
+}
+.ky-table-footer-button:hover {
+  background-color: #ffffff;
+}
+.ky-table-footer-button:active {
+  background-color: #1898eb;
+  border: 0;
+}
+.ky-table-footer-button:hover {
+  border-color: #1898eb;
+}
+.ky-table-footer-button:active {
+  color: #ffffff;
+  background-color: #1898eb;
+  border-color: #1898eb;
+}
+.ky-table-footer-button:disabled {
+  background-color: #f2f2f2;
+  border-color: #dddddd;
+  color: #bbbbbb;
+}
+.ky-button-icon {
+  float: left;
+  margin-right: 4px;
+}

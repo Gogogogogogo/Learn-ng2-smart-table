@@ -33,9 +33,9 @@ var Ng2SmartTableComponent = (function () {
             hideSubHeader: false,
             actions: {
                 columnTitle: 'Actions',
-                add: true,
-                edit: true,
-                delete: true
+                add: false,
+                edit: false,
+                delete: false
             },
             filter: {
                 inputClass: '',
@@ -70,6 +70,15 @@ var Ng2SmartTableComponent = (function () {
             }
         };
     }
+    Ng2SmartTableComponent.prototype.ngOnInit = function () {
+        // console.log(this.trRef);
+    };
+    Ng2SmartTableComponent.prototype.ngAfterViewInit = function () {
+        console.log(this.trRef);
+        console.log(this.trRef.length);
+        // console.log(this.trRef._results[0]);
+        // console.log(this.trRef._emitter);
+    };
     Ng2SmartTableComponent.prototype.ngOnChanges = function (changes) {
         if (this.grid) {
             if (changes['settings']) {
@@ -165,6 +174,10 @@ var Ng2SmartTableComponent = (function () {
     Ng2SmartTableComponent.prototype.prepareSettings = function () {
         return helpers_1.deepExtend({}, this.defaultSettings, this.settings);
     };
+    __decorate([
+        core_1.ViewChildren('ref', { read: core_1.ViewContainerRef }), 
+        __metadata('design:type', Object)
+    ], Ng2SmartTableComponent.prototype, "trRef", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)

@@ -3,7 +3,7 @@
  */
 import {
     Component, Input, Output, SimpleChange, EventEmitter,
-    OnChanges
+    OnChanges, ViewChild, ViewContainerRef, OnInit, AfterViewInit, ViewChildren
 } from '@angular/core';
 
 import { Grid } from './grid';
@@ -13,6 +13,7 @@ import { Row } from './data-set/row';
 import { deepExtend } from './helpers';
 import { LocalDataSource } from './data-source/local/local-dataSource';
 
+
 @Component({
     moduleId:module.id,
     selector: 'ng2-smart-table',
@@ -20,8 +21,8 @@ import { LocalDataSource } from './data-source/local/local-dataSource';
     styleUrls:['./ng2-smart-table.css']
 
 })
-export class Ng2SmartTableComponent implements OnChanges {
-
+export class Ng2SmartTableComponent implements OnChanges,OnInit,AfterViewInit {
+    @ViewChildren('ref',{read:ViewContainerRef}) trRef:any;
     @Input() source: any;
     @Input() settings: Object = {};
 
@@ -34,7 +35,16 @@ export class Ng2SmartTableComponent implements OnChanges {
     @Output() public deleteConfirm: EventEmitter<any> = new EventEmitter<any>();
     @Output() public editConfirm: EventEmitter<any> = new EventEmitter<any>();
     @Output() public createConfirm: EventEmitter<any> = new EventEmitter<any>();
+    ngOnInit(){
+        // console.log(this.trRef);
+    }
+    ngAfterViewInit(){
+         console.log(this.trRef);
+         console.log(this.trRef.length);
+        // console.log(this.trRef._results[0]);
+        // console.log(this.trRef._emitter);
 
+    }
     protected grid: Grid;
     protected defaultSettings: Object = {
 
@@ -43,9 +53,9 @@ export class Ng2SmartTableComponent implements OnChanges {
         hideSubHeader: false,
         actions: {
             columnTitle: 'Actions',
-            add: true,
-            edit: true,
-            delete: true
+            add: false,
+            edit: false,
+            delete: false
         },
         filter: {
             inputClass: '',
@@ -90,6 +100,7 @@ export class Ng2SmartTableComponent implements OnChanges {
             }
         } else {
             this.initGrid();
+            // console.log(this.trRef);
         }
     }
 
